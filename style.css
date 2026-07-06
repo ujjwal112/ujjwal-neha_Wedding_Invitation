@@ -1347,19 +1347,18 @@ button {
   }
 
   .hero__details,
-  .countdown-grid,
   .timeline-grid,
   .contacts-grid,
   .story-grid {
     grid-template-columns: 1fr;
   }
 
-  .event-card__meta {
-    grid-template-columns: 1fr;
+  .countdown-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
+  .event-card__meta {
+    grid-template-columns: 1fr;
   }
 
   .hero__ornament {
@@ -1403,8 +1402,9 @@ button {
     flex-basis: 100%;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .floating-actions {
@@ -1729,4 +1729,35 @@ button {
 /* Page lock styling */
 body.is-locked {
   overflow: hidden !important;
+}
+
+/* Mobile Envelope Responsiveness */
+@media (max-width: 560px) {
+  .envelope__names {
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+  }
+  .envelope__content {
+    width: min(340px, calc(100vw - 2rem));
+    top: 25%;
+  }
+  .envelope__seal-wrapper {
+    top: 52%;
+  }
+  .seal__wax {
+    width: 105px;
+    height: 105px;
+    border-width: 5px;
+  }
+  .seal__gold-emblem {
+    width: 68px;
+    height: 68px;
+  }
+  .seal__gold-emblem svg {
+    width: 42px;
+    height: 42px;
+  }
+  .envelope__prompt {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+  }
 }
